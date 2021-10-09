@@ -1,3 +1,4 @@
 node_modules
 .env
 google-services.json
+*.p8
