@@ -42,7 +42,7 @@ app.get('/send-notification', async (req, res) => {
 
 app.get('/send-notification-ios', async (req, res) => {
   try {
-    const NATIVE_DEVICE_TOKEN = '3adf124c8b49bbfee9aa57e5d6991fc5ba4f8c5b69f88a716c03fdbf0ef34b15'
+    const NATIVE_DEVICE_TOKEN = ''
     await sendIOSNotification({ nativeDeviceToken: NATIVE_DEVICE_TOKEN })
     return res.json({ success: true })
   } catch (error) {
@@ -87,8 +87,8 @@ function sendIOSNotification ({ nativeDeviceToken }) {
       JSON.stringify({
         aps: {
           alert: {
-            title: "\uD83D\uDCE7 You've got mail!",
-            body: 'Hello world! \uD83C\uDF10'
+            title: 'blog.me-idea.in.th',
+            body: 'ทดสอบส่ง message ผ่าน server โดยใช้ API Push Apple'
           }
         },
         experienceId: EXPERIENCE_ID // Required when testing in the Expo Go app
